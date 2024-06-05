@@ -19,7 +19,7 @@ async function cargarTareas() {
            const li = document.createElement("li")
     const p = document.createElement("p");
         p.textContent = tareasPrometidas[i].task;
-        p.id = tareasPrometidas[i].id
+        // p.tas = tareasPrometidas[i].id
 
         li.appendChild(p);
         li.appendChild(addDeleteBtn());
@@ -41,12 +41,8 @@ cargarTareas()
 //debo agregar un id, itero sobre algo y meto en delete task el retorno ya que delete task con el id puede borrar del api
 async function llamarBorrado() {
 
-
     let tareasPrometidas= await getTask()
 
-
-
-    
     for (let i = 0; i < tareasPrometidas.length; i++) {
         // console.log(i);
         const li = document.createElement("li")
@@ -56,7 +52,7 @@ console.log(p.id);
     //  p.task= tareasPrometidas[i].id;
     //  p = tareasPrometidas[i].id
 // console.log(p.id);
-//      li.appendChild(p);
+//      li.appendChilyd(p);
 //      li.appendChild(addDeleteBtn());
 //      ul.appendChild(li);
     }
@@ -66,7 +62,7 @@ console.log(p.id);
 
    deleteBtn1.addEventListener("click",function () {
     
-    deleteTask( "")//id
+    deleteTask()//id
    })
 }
 
@@ -106,20 +102,34 @@ addBtn.addEventListener("click", function () {
 
 //DELETE FUNCTION
 function addDeleteBtn() {
-    const deleteBtn = document.createElement("button");//Creamos la variable del boton delete 
-    deleteBtn.textContent = "X";//TextContent
-    deleteBtn.className = "btn-delete";//Creamos clase css
-    deleteBtn.id="eliminar"
+
+    const deleteBtn = document.createElement("input");
+    deleteBtn.type="checkbox";
+    deleteBtn.className="some-name";
+    deleteBtn.id="eliminar";
+    // const textContent = document.createTextNode("Label text content");
+
+//original
+    // const deleteBtn = document.createElement("button");//Creamos la variable del boton delete 
+    // deleteBtn.textContent = "X";//TextContent
+    // deleteBtn.className = "btn-delete";//Creamos clase css
+    // deleteBtn.id="eliminar"
 
     deleteBtn.addEventListener("click", (e) => {//Añadimos el elemento de escucha y su evento antes de agregarlo al ul 
-        const item = e.target.parentElement;//Variable item /e.target se refiere al boton/parentElement para eliminar el parent element de los li
-        ul.removeChild(item);//Tomamos el ul para poder eliminarlo del dom bottando el element
-
-        const items = document.querySelectorAll("li");//seleccionamos todos los li
-
-        if (items.length === 0) {//validamos si hay algún li
-            empty.style.display = "block";//Regresa el parrafo
-        }
+      
+      
+        setTimeout(() => {
+            // validateFunction();
+            const item = e.target.parentElement;//Variable item /e.target se refiere al boton/parentElement para eliminar el parent element de los li
+            ul.removeChild(item);//Tomamos el ul para poder eliminarlo del dom bottando el element
+    
+            const items = document.querySelectorAll("li");//seleccionamos todos los li
+    
+            if (items.length === 0) {//validamos si hay algún li
+                empty.style.display = "block";//Regresa el parrafo
+            }
+        }, 5000);
+      
     });
 
     return deleteBtn;//Una vez se tenga el listener se hace un return 
