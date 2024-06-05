@@ -1,66 +1,115 @@
-//Seleccionamos los elementos html
+// IMPORTS
 import { postTask } from "./fetch";
 import { getTask } from "./fetch";
+import { deleteTask } from "./fetch";
 
+//Seleccionamos los elementos html
 const input = document.querySelector("input");
 const addBtn = document.querySelector(".btn-add");//Boton para añadir tarea
 const ul = document.querySelector("ul");//lista donde se agregaran los elementos
 const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
 
 
-
-
+//GET FUNCTION
 async function cargarTareas() {
-    
+
     let tareasPrometidas= await getTask()
 
     for (let i = 0; i < tareasPrometidas.length; i++) {
            const li = document.createElement("li")
     const p = document.createElement("p");
         p.textContent = tareasPrometidas[i].task;
+        p.id = tareasPrometidas[i].id
 
         li.appendChild(p);
         li.appendChild(addDeleteBtn());
         ul.appendChild(li);
-            
-    }
 
+    
+        
+        
+    }llamarBorrado()
 
+    // llamarBorrado()
+    
+
+   
 }
-
 cargarTareas()
 
+//OBTNER EL ID DEL TARGET
+//debo agregar un id, itero sobre algo y meto en delete task el retorno ya que delete task con el id puede borrar del api
+async function llamarBorrado() {
+
+
+    let tareasPrometidas= await getTask()
+
+
+
+    
+    for (let i = 0; i < tareasPrometidas.length; i++) {
+        // console.log(i);
+        const li = document.createElement("li")
+ const p = document.createElement("p");
+ p.id = tareasPrometidas[i].id
+console.log(p.id);
+    //  p.task= tareasPrometidas[i].id;
+    //  p = tareasPrometidas[i].id
+// console.log(p.id);
+//      li.appendChild(p);
+//      li.appendChild(addDeleteBtn());
+//      ul.appendChild(li);
+    }
+    
+    // console.log("WADADAWDA")
+    const deleteBtn1 =document.getElementById("eliminar")
+
+   deleteBtn1.addEventListener("click",function () {
+    
+    deleteTask( "")//id
+   })
+}
+
+
+//ESCUCHA AL BOTON AGREGAR TAREAS
 addBtn.addEventListener("click", function () {
    postTask(input.value)
 })
 
 
 
-//Evento de escucha del boton 
-addBtn.addEventListener("click", (e) => { //evento click, y la fucion 
-    e.preventDefault();//evitar la recarga al dar click al boton
-    const text = input.value;//toma el valor actual del input
-    //Validacion
-    if (text !== "") { //Si el valor del input no está
-  
-        const li = document.createElement("li");//Creamos un elemento li
-        const p = document.createElement("p");//Creamos un elemento p
-        p.textContent = text;//El valor del input será igual al textcontent del parrafo
+// async function eliminarTareas() {
+//     let eliminarPrometidas= await deleteTask(id)
 
-        li.appendChild(p);//Añadir el parrafo al li
-        li.appendChild(addDeleteBtn());//Y al ul se le añade el li y agrega el boton 
-        ul.appendChild(li);
+//     const deleteBtn = document.createElement("button");
+//     deleteBtn.textContent = "X";
+//     deleteBtn.className = "btn-delete";
 
-        input.value = "";//Cada que se de click, el valor del input se vacía
-        empty.style.display = "none";//Seleccionamos el parrafo y su display "none"
-     
-    }
-});
-//Funcnion del boton eleiminar
+//     deleteBtn.addEventListener("click", (e) => {
+//         const item = e.target.parentElement;
+//         ul.removeChild(item);
+
+//         const items = document.querySelectorAll("li");
+
+//         if (items.length === 0) {
+//             empty.style.display = "block";
+//         }
+//     });
+
+//     return deleteBtn;
+// }
+// eliminarTareas()
+
+
+
+
+
+//DELETE FUNCTION
 function addDeleteBtn() {
     const deleteBtn = document.createElement("button");//Creamos la variable del boton delete 
     deleteBtn.textContent = "X";//TextContent
     deleteBtn.className = "btn-delete";//Creamos clase css
+    deleteBtn.id="eliminar"
 
     deleteBtn.addEventListener("click", (e) => {//Añadimos el elemento de escucha y su evento antes de agregarlo al ul 
         const item = e.target.parentElement;//Variable item /e.target se refiere al boton/parentElement para eliminar el parent element de los li
@@ -90,8 +139,20 @@ function addDeleteBtn() {
 
 
 
+
+
+
 // var img = document.createElement("img");
 // img.src = "./imgs/delete.svg";
 
 // var src = document.getElementById("header");
 // src.appendChild(img);
+
+
+const button = document.getElementById("open")
+
+
+// button.addEventListener("click", function () {
+//     location.href = "/index.html";
+//  })
+ 

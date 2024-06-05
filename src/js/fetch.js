@@ -1,6 +1,6 @@
 
 
-
+//GET API
 async function getTask() {
     try {
         const response = await fetch('http://localhost:3000/api/task');
@@ -12,7 +12,7 @@ async function getTask() {
     }
 }
 
-
+//POST API
 const postTask = async (input) => {
     try {
         const response = await fetch('http://localhost:3000/api/task', {
@@ -32,5 +32,27 @@ const postTask = async (input) => {
     }
 }
 
-export { getTask, postTask }
+//DELETE API
+const deleteTask = async (id) => {
+
+    console.log(id)
+    try {
+        const response = await fetch(`http://localhost:3000/api/task/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        
+        });
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        // location.reload()
+        console.log(error)
+    }
+}
+
+
+// EXPORTS
+export { getTask, postTask, deleteTask }
 
