@@ -124,3 +124,81 @@ delete == post / api/task/ id como parametro
 
 //     }
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // deleteBtn.addEventListener("click", (e) => {//Añadimos el elemento de escucha y su evento antes de agregarlo al ul
+     
+
+    //         // const item = e.target.parentElement;//Variable item /e.target se refiere al boton/parentElement para eliminar el parent element de los li
+    //         // ul.removeChild(item);//Tomamos el ul para poder eliminarlo del dom bottando el element
+
+    //         // const items = document.querySelectorAll("li");//seleccionamos todos los li
+
+    //         // if (items.length === 0) {//validamos si hay algún li
+    //         //     empty.style.display = "block";//Regresa el parrafo
+    //         // }
+
+
+
+
+
+
+
+Eliminar el mensajes de p cuando hay una tarea 
+
+crear el contador 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bonus:
+
+Poder buscar en la lista de to-do y filtrar por tareas que contengan el texto buscado.

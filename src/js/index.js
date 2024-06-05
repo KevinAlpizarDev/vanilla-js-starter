@@ -12,127 +12,101 @@ const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
 
 //GET FUNCTION
 async function cargarTareas() {
+    let tareasPrometidas = await getTask()
 
-    let tareasPrometidas= await getTask()
+    // console.log( typeof tareasPrometidas.length)
+
+    if (tareasPrometidas.length <= 0) {//validamos si hay algún li
+        empty.style.display = "block";//Regresa el parrafo
+    }
+    else if (tareasPrometidas.length >= 0) {
+        empty.style.display = "none";//Regresa el parrafo
+    }
 
     for (let i = 0; i < tareasPrometidas.length; i++) {
-           const li = document.createElement("li")
-    const p = document.createElement("p");
+        const li = document.createElement("li")
+        const p = document.createElement("p");
         p.textContent = tareasPrometidas[i].task;
-        // p.tas = tareasPrometidas[i].id
+        li.id = tareasPrometidas[i].id;
 
-        li.appendChild(p);
+        counterFunction();
+        validaClick(li)
+        li.appendChild(p)
+
         li.appendChild(addDeleteBtn());
+
         ul.appendChild(li);
-
-    
-        
-        
-    }llamarBorrado()
-
-    // llamarBorrado()
-    
-
-   
+    }
+    llamarBorrado()
 }
+
+
 cargarTareas()
 
 //OBTNER EL ID DEL TARGET
 //debo agregar un id, itero sobre algo y meto en delete task el retorno ya que delete task con el id puede borrar del api
 async function llamarBorrado() {
 
-    let tareasPrometidas= await getTask()
+    let tareasPrometidas = await getTask()
+
+
+
+
+
 
     for (let i = 0; i < tareasPrometidas.length; i++) {
         // console.log(i);
         const li = document.createElement("li")
- const p = document.createElement("p");
- p.id = tareasPrometidas[i].id
-console.log(p.id);
-    //  p.task= tareasPrometidas[i].id;
-    //  p = tareasPrometidas[i].id
-// console.log(p.id);
-//      li.appendChilyd(p);
-//      li.appendChild(addDeleteBtn());
-//      ul.appendChild(li);
-    }
-    
-    // console.log("WADADAWDA")
-    const deleteBtn1 =document.getElementById("eliminar")
+        const p = document.createElement("p");
+        li.id = tareasPrometidas[i].id
 
-   deleteBtn1.addEventListener("click",function () {
-    
-    deleteTask()//id
-   })
+
+    }
+    // console.log("WADADAWDA")
 }
 
 
+
+
+
+
+function validaClick(li) {
+    li.addEventListener("change", function () {
+        //SETTIMEOUT PARA DELETE DEL API
+
+
+
+
+        setTimeout(() => {
+            deleteTask(li.id)
+
+
+            //TRES SEGUNDOS DE RETARDO
+        }, 1000);
+    })
+}
+
 //ESCUCHA AL BOTON AGREGAR TAREAS
 addBtn.addEventListener("click", function () {
-   postTask(input.value)
+    //VALIDACION TAREAS VACÍAS
+    if (input.value != "") {
+        postTask(input.value)
+
+    }
 })
-
-
-
-// async function eliminarTareas() {
-//     let eliminarPrometidas= await deleteTask(id)
-
-//     const deleteBtn = document.createElement("button");
-//     deleteBtn.textContent = "X";
-//     deleteBtn.className = "btn-delete";
-
-//     deleteBtn.addEventListener("click", (e) => {
-//         const item = e.target.parentElement;
-//         ul.removeChild(item);
-
-//         const items = document.querySelectorAll("li");
-
-//         if (items.length === 0) {
-//             empty.style.display = "block";
-//         }
-//     });
-
-//     return deleteBtn;
-// }
-// eliminarTareas()
-
-
-
-
 
 //DELETE FUNCTION
 function addDeleteBtn() {
-
     const deleteBtn = document.createElement("input");
-    deleteBtn.type="checkbox";
-    deleteBtn.className="some-name";
-    deleteBtn.id="eliminar";
-    // const textContent = document.createTextNode("Label text content");
 
-//original
-    // const deleteBtn = document.createElement("button");//Creamos la variable del boton delete 
-    // deleteBtn.textContent = "X";//TextContent
-    // deleteBtn.className = "btn-delete";//Creamos clase css
-    // deleteBtn.id="eliminar"
+    deleteBtn.type = "checkbox";
+    deleteBtn.id = "eliminar";
+    deleteBtn.className = "some-name";//AGREGARLE UNA CLASE
 
-    deleteBtn.addEventListener("click", (e) => {//Añadimos el elemento de escucha y su evento antes de agregarlo al ul 
-      
-      
-        setTimeout(() => {
-            // validateFunction();
-            const item = e.target.parentElement;//Variable item /e.target se refiere al boton/parentElement para eliminar el parent element de los li
-            ul.removeChild(item);//Tomamos el ul para poder eliminarlo del dom bottando el element
-    
-            const items = document.querySelectorAll("li");//seleccionamos todos los li
-    
-            if (items.length === 0) {//validamos si hay algún li
-                empty.style.display = "block";//Regresa el parrafo
-            }
-        }, 5000);
-      
-    });
 
-    return deleteBtn;//Una vez se tenga el listener se hace un return 
+
+
+    return deleteBtn;//Una vez se tenga el listener se hace un return
     // para agregar la funcnion a agregar el li
 }
 
@@ -141,28 +115,26 @@ function addDeleteBtn() {
 
 
 
+let today = document.getElementById("today")
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+const d = new Date();
+let day = days[d.getDay()];
+
+
+today.innerHTML = day
+console.log(day);
+
+
+ pendingTaskCounter = 0 
+const counterFunction = () => {
+    pendingTaskCounter++ 
+    let counter = document.getElementById("counter")
+counter.innerHTML = pendingTaskCounter
+
+}
+    
+    
 
 
 
-
-
-
-
-
-
-
-
-// var img = document.createElement("img");
-// img.src = "./imgs/delete.svg";
-
-// var src = document.getElementById("header");
-// src.appendChild(img);
-
-
-const button = document.getElementById("open")
-
-
-// button.addEventListener("click", function () {
-//     location.href = "/index.html";
-//  })
- 

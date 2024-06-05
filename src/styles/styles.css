@@ -11,6 +11,10 @@
     background-color: red;
 } */
 
+#today{
+    color: white;
+}
+
 body{
     margin-top: 60px;
     background-color: red;
@@ -23,7 +27,7 @@ header{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 36px;
+    height: 134px;
     background-color: aqua;
    
     
