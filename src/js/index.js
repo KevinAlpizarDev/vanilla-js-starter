@@ -86,6 +86,20 @@ function validaClick(li) {
     })
 }
 
+
+////////////////////
+
+document.addEventListener('keydown', function (e) {
+    // console.log(e.key);
+
+    if (e.key === 'Escape') {
+        if (input.value != "") {
+            postTask(input.value)
+
+        }
+    }
+
+})
 //ESCUCHA AL BOTON AGREGAR TAREAS
 addBtn.addEventListener("click", function () {
     //VALIDACION TAREAS VACÍAS
@@ -126,15 +140,15 @@ today.innerHTML = day
 console.log(day);
 
 
- pendingTaskCounter = 0 
+pendingTaskCounter = 0
 const counterFunction = () => {
-    pendingTaskCounter++ 
+    pendingTaskCounter++
     let counter = document.getElementById("counter")
-counter.innerHTML = pendingTaskCounter
+    counter.innerHTML = pendingTaskCounter
 
 }
-    
-    
+
+
 
 
 
