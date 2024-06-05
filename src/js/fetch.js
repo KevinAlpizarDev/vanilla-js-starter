@@ -47,9 +47,10 @@ const deleteTask = async (id) => {
         const data = await response.json();
         console.log(data);
     } catch (error) {
-        // location.reload()
+      
         console.log(error)
     }
+    window.location.reload()
 }
 
 
