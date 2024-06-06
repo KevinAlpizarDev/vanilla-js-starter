@@ -2,6 +2,12 @@
 <html>
 
 <head>
+	<!-- POPPINS FONT -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 	<!-- GOOGLE FONT -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,7 +15,7 @@
 		href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
 		rel="stylesheet">
 	<!-- TITTLE -->
-	<title>Ejemplo básico.</title>
+	<title>Ejemplo básico</title>
 	<meta charset="UTF-8" />
 	<!-- ESTILO CSS -->
 	<link rel="stylesheet" href="styles/styles.css">
@@ -23,55 +29,82 @@
 <body>
 	<!-- HEADER -->
 	<header>
-		<div class="search">
+		<!-- div izquierdo -->
+		<div class="header-left">
+			<h1>Keep</h1>
+		</div>
+		<!-- div central -->
+		<div class="header-center">
+
+
 			<form>
-				<input type="text" placeholder="Agregar tarea...">
+				<input id="input" type="text" placeholder="Agregar tarea...">
 				<button class="btn-add">
-					<img src="./imgs/seachBar.svg" alt="">
+					<!-- <img src="./imgs/seachBar.svg" alt=""> -->
+					SEND
 				</button>
 			</form>
-	</header>
-	<div class="container-color">
 
+		</div>
+		<!-- div derecho -->
+		<div class="header-right">
+			<div class="status">
+				<div class="text-day">
 
-		<!-- CONTENEDOR HEADER -->
-		<div class="container">
-
-			<div class="container-segment">
-				<h2>nothing</h2>
-			</div>
-			<div class="container-segment">
-				<h2>lista de Tareas</h2>
-			</div>
-			<div class="container-segment izquierdo">
-				<div class="container-segment-day">
-					<div>
-						<h4 id="today">day.</h4>
-						<h2 id="counter"></h2>
-					</div>
-
+					<h2 id="today"></h2>
 				</div>
+				<div class="number-day">
+
+					<h2 id="counter">0</h2>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<div class="task-tittle">
+		<h2>lista de Tareas</h2>
+	</div>
+	<!-- DIV SCROLL -->
+	<div class="scroll-container">
+		<div class="scroll">
+			
+
+
+			<div class="li-container">
+				<ul>
+			
+				</ul>
+			</div>
+
+			<div class="empty">
+
+				<div id="header">
+		
+				</div>
+				<p>No tienes tareas pendientes</p>
+			
+		
 			</div>
 
 		</div>
-		<div class="li-container">
-			<ul>
 
-			</ul>
-		</div>
-		<div class="empty">
+	</div>
 
-			<div id="header">
 
-			</div>
-			<p>No tienes tareas pendientes</p>
-			<h3>CHECKBOX</h3>
 
-			<form id="myform">
-				syn<input type="checkbox" name="checkfield" id="g01-01"  />
-			</form>
 
-		</div>
+
+
+
+
+
+
+
+
+
+	</div>
+
 	</div>
 	</div>
 	<!-- SCRIPT JS -->

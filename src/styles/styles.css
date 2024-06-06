@@ -11,126 +11,169 @@
     background-color: red;
 } */
 
-#today{
-    color: white;
-}
-
-body{
-    margin-top: 60px;
-    background-color: red;
-}
-
 
 header{
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 134px;
-    background-color: aqua;
-   
-    
- /* margin-bottom: 80px; */
-}
-
-
-.container-segment{
-    width: 400px;
-    background-color: rgb(10, 160, 77);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.izquierdo{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    background-color: rgb(219, 124, 0);
-
-}
-
-.container-segment-day{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-}
-
-
-
-
-.container h2{
- height: 100px;
-  margin-top: 60px;
-    background-color: rgb(127, 148, 255);
-}
-
-
-.container h3{
-    height: 100px;
-width: 140px;
-
-     margin-top: 60px;
-       background-color: rgb(87, 112, 222);
-   }
-
-.container-color{
-border-radius: 40px;
-    background-color: rgb(112, 90, 90);
-    margin: 0px 30px;
  
 }
 
 
-.search{
+.header-left{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+width: 100%;
+height: 100%;
+/* background-color: aquamarine; */
+background-color: rgb(219, 255, 127);
+}
+
+
+
+
+
+
+.header-center{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
-    height: 100px;
-    width: 65%;
-    background-color: blanchedalmond;
-    position: fixed;
-}
-
-
-
-.container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 100%;
-    height: 120px;
-    /* background-color: aquamarine; */
-}
-
-.container-izquierdo{
-width: 50%;
-/* background-color:red ; */
-
-
-}
-.container-derecho{
-    width: 50%;
-    /* background-color:rgb(49, 0, 0) ; */
-    
+    height: 100%;
+    background-color: rgb(219, 255, 127);
     }
 
+    
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 50%;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+        }
+        
+
+        #input {
+            width: 70%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            
+        }
+        #input:focus {
+            outline: none;
+        }
+        
+        
+        .search-div{
+        width: 100%;
+        height: 20px;
+        background-color: aqua;
+        
+        }
 
 
-#button-agregar{
+        .btn-add{
+
+height: 100%;
+width: 20%;
+        background-color: transparent;
+            border: none;
+        }
+
+
+    .header-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+/* background-color: rgb(228, 174, 174); */
+background-color: rgb(219, 255, 127);
+
+        
+        
+        }
+
+        .status{
+            background-color: white;
+            height: 90%;
+            width: 50% ;
+            border-radius: 5px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            /* background-color: rgb(219, 255, 127); */
+        }
+
+        .text-day{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          height: 30%;
+      /* background-color: blanchedalmond; */
+        }
+
+
+        .text-day h2{
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+          }
+  
+
+    
+    .number-day{
+display: flex;
+justify-content: center;
+align-items: center;
+        height: 70%;
+      
+    }
+
+    .number-day h2{
+      font-size: 60px;
+            }
+
+/* TITULO DE LAS TAREAS */
+.task-tittle{
     background-color: blue;
-width: 120px;
-height: 40px;
-border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
-#button-agregar:hover{
-    background-color: rgb(99, 99, 233);
 
-
+.scroll-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background-color: aqua;
 }
+
+.scroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+ padding: 60px 0px;
+    background-color: rebeccapurple;
+    overflow-y: scroll;
+}
+            /*Lista de TAREAS */
+
+            ul li {
+                width: 100%;
+                display: flex;
+            justify-content: space-around;
+            background-color: red;
+            margin: 10px;
+            }

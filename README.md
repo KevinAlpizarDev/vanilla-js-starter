@@ -96,54 +96,29 @@ export {getTask}
 
 delete == post / api/task/ id como parametro
 
+//Evento de escucha del boton
+// addBtn.addEventListener("click", (e) => { //evento click, y la fucion
+// e.preventDefault();//evitar la recarga al dar click al boton
+// const text = input.value;//toma el valor actual del input
+// //Validacion
+// if (text !== "") { //Si el valor del input no está
 
+// const li = document.createElement("li");//Creamos un elemento li
+// const p = document.createElement("p");//Creamos un elemento p
+// p.textContent = text;//El valor del input será igual al textcontent del parrafo
 
+// li.appendChild(p);//Añadir el parrafo al li
+// li.appendChild(addDeleteBtn());//Y al ul se le añade el li y agrega el boton
+// ul.appendChild(li);
 
+// input.value = "";//Cada que se de click, el valor del input se vacía
+// empty.style.display = "none";//Seleccionamos el parrafo y su display "none"
 
-
-
-
-
-//Evento de escucha del boton 
-// addBtn.addEventListener("click", (e) => { //evento click, y la fucion 
-//     e.preventDefault();//evitar la recarga al dar click al boton
-//     const text = input.value;//toma el valor actual del input
-//     //Validacion
-//     if (text !== "") { //Si el valor del input no está
-
-//         const li = document.createElement("li");//Creamos un elemento li
-//         const p = document.createElement("p");//Creamos un elemento p
-//         p.textContent = text;//El valor del input será igual al textcontent del parrafo
-
-//         li.appendChild(p);//Añadir el parrafo al li
-//         li.appendChild(addDeleteBtn());//Y al ul se le añade el li y agrega el boton 
-//         ul.appendChild(li);
-
-//         input.value = "";//Cada que se de click, el valor del input se vacía
-//         empty.style.display = "none";//Seleccionamos el parrafo y su display "none"
-
-//     }
+// }
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // deleteBtn.addEventListener("click", (e) => {//Añadimos el elemento de escucha y su evento antes de agregarlo al ul
-     
+
 
     //         // const item = e.target.parentElement;//Variable item /e.target se refiere al boton/parentElement para eliminar el parent element de los li
     //         // ul.removeChild(item);//Tomamos el ul para poder eliminarlo del dom bottando el element
@@ -154,51 +129,121 @@ delete == post / api/task/ id como parametro
     //         //     empty.style.display = "block";//Regresa el parrafo
     //         // }
 
+Eliminar el mensajes de p cuando hay una tarea
 
-
-
-
-
-
-Eliminar el mensajes de p cuando hay una tarea 
-
-crear el contador 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+crear el contador
 
 Bonus:
 
 Poder buscar en la lista de to-do y filtrar por tareas que contengan el texto buscado.
+
+    <!-- HEADER -->
+    <header>
+    	<div class="search">
+    		<form>
+    			<input type="text" placeholder="Agregar tarea...">
+    			<button class="btn-add">
+    				<img src="./imgs/seachBar.svg" alt="">
+    			</button>
+    		</form>
+    </header>
+
+
+
+
+    <h2>nothing</h2>
+
+
+    <h2>lista de Tareas</h2>
+
+<div>
+	
+	<h4 id="today"></h4>
+	<h2 id="counter"></h2>
+</div>
+
+    <div class="li-container">
+    	<ul>
+
+    	</ul>
+    </div>
+    <div class="empty">
+
+    	<p>No tienes tareas pendientes</p>
+    <h3>CHECKBOX</h3>
+    </div>
+
+
+
+
+
+    hola
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo et quo! Corporis nobis in iste
+    		tenetur error fugit, tempora id quaerat animi mollitia illo optio magni ut possimus voluptatum.
+    		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima adipisci incidunt cupiditate libero unde
+    		vero totam officia porro doloremque quod nisi odit perspiciatis officiis, quis earum, fugiat ipsum id
+    		quisquam?
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore enim pariatur sapiente totam quod expedita
+    		similique! Suscipit cupiditate nobis alias, voluptas dolore non accusantium quaerat, assumenda aperiam sunt
+    		ab dolor!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolores delectus est debitis id enim
+    		deserunt, velit quos impedit asperiores in sed ullam atque vitae quis aut doloribus commodi sunt!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi maxime voluptatibus impedit eaque. Magni
+    		quod provident nemo fuga quia officiis illo alias accusantium dolor, ratione dicta tempora veritatis
+    		mollitia!
+    		hola
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo et quo! Corporis nobis in iste
+    		tenetur error fugit, tempora id quaerat animi mollitia illo optio magni ut possimus voluptatum.
+    		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima adipisci incidunt cupiditate libero unde
+    		vero totam officia porro doloremque quod nisi odit perspiciatis officiis, quis earum, fugiat ipsum id
+    		quisquam?
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore enim pariatur sapiente totam quod expedita
+    		similique! Suscipit cupiditate nobis alias, voluptas dolore non accusantium quaerat, assumenda aperiam sunt
+    		ab dolor!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolores delectus est debitis id enim
+    		deserunt, velit quos impedit asperiores in sed ullam atque vitae quis aut doloribus commodi sunt!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi maxime voluptatibus impedit eaque. Magni
+    		quod provident nemo fuga quia officiis illo alias accusantium dolor, ratione dicta tempora veritatis
+    		mollitia!
+    		hola
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo et quo! Corporis nobis in iste
+    		tenetur error fugit, tempora id quaerat animi mollitia illo optio magni ut possimus voluptatum.
+    		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima adipisci incidunt cupiditate libero unde
+    		vero totam officia porro doloremque quod nisi odit perspiciatis officiis, quis earum, fugiat ipsum id
+    		quisquam?
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore enim pariatur sapiente totam quod expedita
+    		similique! Suscipit cupiditate nobis alias, voluptas dolore non accusantium quaerat, assumenda aperiam sunt
+    		ab dolor!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolores delectus est debitis id enim
+    		deserunt, velit quos impedit asperiores in sed ullam atque vitae quis aut doloribus commodi sunt!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi maxime voluptatibus impedit eaque. Magni
+    		quod provident nemo fuga quia officiis illo alias accusantium dolor, ratione dicta tempora veritatis
+    		mollitia!
+    		hola
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo et quo! Corporis nobis in iste
+    		tenetur error fugit, tempora id quaerat animi mollitia illo optio magni ut possimus voluptatum.
+    		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima adipisci incidunt cupiditate libero unde
+    		vero totam officia porro doloremque quod nisi odit perspiciatis officiis, quis earum, fugiat ipsum id
+    		quisquam?
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore enim pariatur sapiente totam quod expedita
+    		similique! Suscipit cupiditate nobis alias, voluptas dolore non accusantium quaerat, assumenda aperiam sunt
+    		ab dolor!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolores delectus est debitis id enim
+    		deserunt, velit quos impedit asperiores in sed ullam atque vitae quis aut doloribus commodi sunt!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi maxime voluptatibus impedit eaque. Magni
+    		quod provident nemo fuga quia officiis illo alias accusantium dolor, ratione dicta tempora veritatis
+    		mollitia!
+    		hola
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo et quo! Corporis nobis in iste
+    		tenetur error fugit, tempora id quaerat animi mollitia illo optio magni ut possimus voluptatum.
+    		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima adipisci incidunt cupiditate libero unde
+    		vero totam officia porro doloremque quod nisi odit perspiciatis officiis, quis earum, fugiat ipsum id
+    		quisquam?
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore enim pariatur sapiente totam quod expedita
+    		similique! Suscipit cupiditate nobis alias, voluptas dolore non accusantium quaerat, assumenda aperiam sunt
+    		ab dolor!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolores delectus est debitis id enim
+    		deserunt, velit quos impedit asperiores in sed ullam atque vitae quis aut doloribus commodi sunt!
+    		Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi maxime voluptatibus impedit eaque. Magni
+    		quod provident nemo fuga quia officiis illo alias accusantium dolor, ratione dicta tempora veritatis
+    		mollitia!
