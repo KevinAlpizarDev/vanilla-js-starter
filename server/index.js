@@ -1,8 +1,8 @@
-var express = require("express");
-var cors = require("cors");
+let express = require("express");
+let cors = require("cors");
 const { uuid } = require("uuidv4");
 
-var app = express();
+let app = express();
 app.use(express.json());
 
 app.use(cors());
@@ -11,9 +11,9 @@ app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
 
-var taskRouter = express.Router();
+let taskRouter = express.Router();
 
-var tasks = [];
+let tasks = [];
 
 taskRouter
   .route("/")
@@ -25,6 +25,9 @@ taskRouter
       ...req.body,
       id: uuid(),
     });
+
+
+    
     return res.json(tasks);
   });
 taskRouter.route("/:task_id")
