@@ -135,7 +135,6 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const d = new Date();
 let day = days[d.getDay()];
 
-
 today.innerHTML = `Tasks for: ${day}` 
 console.log(day);
 

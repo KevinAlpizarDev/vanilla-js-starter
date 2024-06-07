@@ -5,11 +5,9 @@
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
 }
 
-/* html{
-    background-color: red;
-} */
 
 
 header{
@@ -24,7 +22,7 @@ header{
 
 .header-left{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
 width: 100%;
 height: 100%;
@@ -32,7 +30,41 @@ height: 100%;
 background-color: rgb(219, 255, 127);
 }
 
+.header-left h1{
+    color: rgb(61, 42, 180);
+    animation-name:  movenInLeft;
+    animation-duration: 4s;
+}
 
+
+@keyframes movenInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    80% {
+      transform: translateX(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+.k-span{
+    color: rgb(0, 255, 179);
+}
+.e-span{
+    color: rgb(62, 244, 55);
+}
+
+.e-span-2{
+    color: rgb(228, 55, 244);
+}
+
+.p-span{
+    color: rgb(54, 66, 229);
+}
 
 
 
@@ -55,15 +87,19 @@ background-color: rgb(219, 255, 127);
         height: 50%;
         width: 100%;
         background-color: rgb(255, 255, 255);
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+        /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; */
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
         }
         
 
         #input {
             width: 70%;
-            height: 100%;
+            /* height: 100%; */
             border: none;
             background-color: transparent;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
             
         }
         #input:focus {
@@ -80,13 +116,33 @@ background-color: rgb(219, 255, 127);
 
 
         .btn-add{
-
 height: 100%;
 width: 20%;
         background-color: transparent;
             border: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 25px;
         }
 
+        .btn-add a{
+
+color: black;
+text-decoration: none;
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+        }
+
+        .btn-add a:hover{
+
+            color: black;
+            text-decoration: underline;
+            
+                    }
+            
+            
 
     .header-right{
         display: flex;
@@ -102,11 +158,11 @@ background-color: rgb(219, 255, 127);
         }
 
         .status{
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             height: 90%;
             width: 50% ;
             border-radius: 5px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
             /* background-color: rgb(219, 255, 127); */
         }
 
@@ -138,21 +194,55 @@ align-items: center;
 
     .number-day h2{
       font-size: 60px;
+      color: rgb(43, 200, 161);
             }
 
 /* TITULO DE LAS TAREAS */
 .task-tittle{
-    background-color: blue;
+    background-color: transparent;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #5720fb;
+
+   
+
 
 }
+.task-tittle h2{
+   color: white;
+
+   margin-left: 100px;
+   text-transform: uppercase;
+   animation: loopText 14s infinite linear;
+  
+
+}
+
+
+@keyframes loopText {
+form{
+    transform: translatex(0%)
+}
+to{
+
+    transform: translatex(-100%)
+}
+
+}
+
+
 
 .scroll-container{
     display: flex;
     justify-content: center;
     align-items: center;
+
+
+ 
+
     width: 100%;
     height: 450px;
     background-color: aqua;
@@ -161,19 +251,25 @@ align-items: center;
 .scroll{
     display: flex;
     justify-content: center;
-    align-items: center;
+ 
     width: 100%;
     height: 100%;
- padding: 60px 0px;
-    background-color: rebeccapurple;
+padding: 50px;
+background-color: #5720fb;
+background-color:#ADD8E6;
+
     overflow-y: scroll;
 }
             /*Lista de TAREAS */
 
             ul li {
-                width: 100%;
+                min-width: 400px;
+                width: 700px;
                 display: flex;
             justify-content: space-around;
-            background-color: red;
+            /* background-color: red; */
+            background-color: white;
+            border-radius: 10px;
             margin: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
             }
