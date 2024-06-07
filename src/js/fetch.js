@@ -59,7 +59,7 @@ const putTask = async (id) => {
     console.log(id)
     try {
         const response = await fetch(`http://localhost:3000/api/task/${id}`, {
-            method: 'DELETE',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -77,5 +77,5 @@ const putTask = async (id) => {
 
 
 // EXPORTS
-export { getTask, postTask, deleteTask }
+export { getTask, postTask, deleteTask, putTask }
 

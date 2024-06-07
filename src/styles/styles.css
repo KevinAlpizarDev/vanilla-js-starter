@@ -2,7 +2,7 @@
 
 * {
     margin: 0px;
-    font-family: "Archivo Black", sans-serif;
+    font-family: "Luckiest Guy", cursive;
     font-weight: 400;
     font-style: normal;
     
@@ -28,12 +28,15 @@ width: 100%;
 height: 100%;
 /* background-color: aquamarine; */
 background-color: rgb(219, 255, 127);
+
 }
 
 .header-left h1{
+    
     color: rgb(61, 42, 180);
     animation-name:  movenInLeft;
     animation-duration: 4s;
+    
 }
 
 
@@ -167,7 +170,8 @@ background-color: rgb(219, 255, 127);
             height: 90%;
             width: 50% ;
             border-radius: 5px;
-            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+            /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
             /* background-color: rgb(219, 255, 127); */
         }
 
@@ -204,13 +208,15 @@ align-items: center;
 
 /* TITULO DE LAS TAREAS */
 .task-tittle{
+    height: 40px;
     background-color: transparent;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     white-space: nowrap;
     overflow: hidden;
     background-color: #5720fb;
+    
 
    
 
@@ -218,10 +224,10 @@ align-items: center;
 }
 .task-tittle h2{
    color: white;
-
-   margin-left: 100px;
+font-size: 23px;
+   margin-left: 190px;
    text-transform: uppercase;
-   animation: loopText 14s infinite linear;
+   animation: loopText 10s infinite linear;
   
 
 }
@@ -269,7 +275,7 @@ background-color:#ADD8E6;
 
             ul li {
                 min-width: 400px;
-                width: 600px;
+                width: 550px;
                 display: flex;
             justify-content: space-around;
             align-items: center;
@@ -277,7 +283,8 @@ background-color:#ADD8E6;
             background-color: white;
             border-radius: 10px;
             margin: 10px;
-            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+            /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
      padding: 5px 100px;
             }
 
@@ -293,7 +300,7 @@ li p {
 
 
 
-
+/* border: none; */
 
 
 
