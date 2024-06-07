@@ -52,18 +52,23 @@ background-color: rgb(219, 255, 127);
 }
 
 .k-span{
-    color: rgb(0, 255, 179);
+    /* color: rgb(0, 255, 179); */
+    color:    #f6c242 ;
+
 }
 .e-span{
-    color: rgb(62, 244, 55);
+    /* color: rgb(62, 244, 55); */
+    color: #3aa4cf;
 }
 
 .e-span-2{
-    color: rgb(228, 55, 244);
+    /* color: rgb(228, 55, 244); */
+    color: #f41155;
 }
 
 .p-span{
-    color: rgb(54, 66, 229);
+    /* color: rgb(54, 66, 229); */
+  color: #F5FFFA;  
 }
 
 
@@ -264,22 +269,25 @@ background-color:#ADD8E6;
 
             ul li {
                 min-width: 400px;
-                width: 700px;
+                width: 600px;
                 display: flex;
             justify-content: space-around;
+            align-items: center;
             /* background-color: red; */
             background-color: white;
             border-radius: 10px;
             margin: 10px;
             box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-        
+     padding: 5px 100px;
             }
 
 
 li p {
-    background-color: blue;
+    /* background-color: blue; */
     min-width: 400px;
     color: red;
+    word-wrap: break-word;
+    margin: 14px;
 }
 
 

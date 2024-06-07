@@ -8,3 +8,6 @@ Verde agua pastel: #E0FFFF
 Lavanda pastel: #FFF0F5
 Coral pastel: #FF7F50
 Azul claro pastel: #ADD8E6
+
+
+proportion of task fixed
