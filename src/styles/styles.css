@@ -298,7 +298,10 @@ li p {
 }
 
 
-
+#inputs{
+    /* background-color: red; */
+    max-width: 400px;
+}
 
 /* border: none; */
 

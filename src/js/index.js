@@ -17,8 +17,6 @@ const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
 async function cargarTareas() {
     let tareasPrometidas = await getTask()
 
-    // console.log( typeof tareasPrometidas.length)
-
     if (tareasPrometidas.length <= 0) {//validamos si hay algún li
         empty.style.display = "block";//Regresa el parrafo
     }
@@ -36,26 +34,37 @@ async function cargarTareas() {
         colorFun()
         // console.log(colorFun());
         validaClick(li)
-        li.appendChild(p)
+       
+        // li.appendChild(p)
 
-        let input = document.createElement("input")
-        console.log(input)
-        input.setAttribute("readonly", "readonly");
+        let inputs = document.createElement("input")
+       
+        inputs.id = "inputs";
+        inputs.setAttribute("readonly", "readonly");
+        
+        // inputs.addEventListener("dblclick", function () {
+        //     inputs.removeAttribute("readonly");
+        // })
 
-        li.appendChild(editButton())
+        // editButton.addEventListener("click", function () {
+           
+        // })
+       
+        inputs.value = p.textContent
+        ul.appendChild(li);
+        li.appendChild(inputs)
+      
+        li.appendChild( editButton())
+
+
         li.appendChild(addDeleteBtn());
 
-        input.value = p.textContent
+        
 
-        ul.appendChild(li);
         // ul.appendChild(input)
     }
     llamarBorrado()
 }
-
-
-
-
 
 
 cargarTareas()
@@ -99,6 +108,8 @@ addBtn.addEventListener("click", function () {
     //VALIDACION TAREAS VACÍAS
     if (input.value.trim() != "") {
         postTask(input.value)
+    }else {
+        alert("tareas vacías no es valido")
     }
 })
 
@@ -111,6 +122,7 @@ function addDeleteBtn() {
     return deleteBtn;//Una vez se tenga el listener se hace un return
     // para agregar la funcnion a agregar el li
 }
+
 
 function editButton() {
     let editButton = document.createElement("button")
