@@ -272,4 +272,28 @@ background-color:#ADD8E6;
             border-radius: 10px;
             margin: 10px;
             box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        
             }
+
+
+li p {
+    background-color: blue;
+    min-width: 400px;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            

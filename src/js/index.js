@@ -2,6 +2,7 @@
 import { postTask } from "./fetch";
 import { getTask } from "./fetch";
 import { deleteTask } from "./fetch";
+// import { myobject } from "./module";
 
 //Seleccionamos los elementos html
 const input = document.querySelector("input");
@@ -30,6 +31,8 @@ async function cargarTareas() {
         li.id = tareasPrometidas[i].id;
 
         counterFunction();
+          colorFun()
+        // console.log(colorFun());
         validaClick(li)
         li.appendChild(p)
 
@@ -103,7 +106,7 @@ document.addEventListener('keydown', function (e) {
 //ESCUCHA AL BOTON AGREGAR TAREAS
 addBtn.addEventListener("click", function () {
     //VALIDACION TAREAS VACÍAS
-    if (input.value != "") {
+    if (input.value.trim() != "") {
         postTask(input.value)
 
     }
@@ -130,12 +133,13 @@ function addDeleteBtn() {
 
 
 let today = document.getElementById("today")
+
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const d = new Date();
 let day = days[d.getDay()];
 
-today.innerHTML = `Tasks for: ${day}` 
+today.innerHTML = `Tasks for: ${day}`
 console.log(day);
 
 
@@ -148,6 +152,76 @@ const counterFunction = () => {
 }
 
 
+// function calcular(operacion, numero1, numero2) { //Parametro 
+
+// //     switch (operacion) {
+// //     case "sumar" :
+// //         return myobject.sumar(numero1, numero2) 
+// //     case "restar":
+// //         return myobject.restar(numero1, numero2)
+// //     case "dividir" :
+// //             return myobject.dividir(numero1, numero2)
+// //     case "multiplicar":
+// //          return myobject.multiplicar(numero1, numero2)
+// //          default:
+// //             console.log("No es nunguna operacion")
+// //             break
+// //   }
+// }
 
 
 
+// console.log(calcular("sumar", 1, 2));
+
+
+
+// colorCounter = 0 
+// let object = ["color1", "color2", "color3", "color4"]
+
+
+// function colorice() {
+    
+//     colorCounter = 0 
+//     let object = ["color1", "color2", "color3", "color4"]
+
+// }
+
+
+// console.log(colorice());
+// // const colorFun = () =>  colorCounter <= 3  ? console.log(object[colorCounter++])  : console.log(object[colorCounter = 0])
+ 
+
+
+
+
+
+
+
+
+// colorCounter = 0 
+// const colorFun = (actualColor) => {
+//      actualColor = ["#ff0000", "#FFFACD", "#F5FFFA", "#87CEEB"]
+
+//     colorCounter <= 3  ? console.log(object[colorCounter++])  : console.log(object[colorCounter = 0])
+//     fontColor.style.color = actualColor;
+
+
+// }
+//     console.log();
+    
+    
+    
+ 
+
+ let fontColor = document.getElementById("fontColor")
+
+
+////////////////////////////////////////
+colorCounter = 0 
+actualColor = ["#ff0000", "#FFFACD", "#F5FFFA", "#87CEEB"]
+const colorFun = () => {
+
+    colorCounter <= 3  ? console.log(actualColor[colorCounter++])  : console.log(actualColor[colorCounter = 0])
+     fontColor.style.color = `${actualColor}`;
+}
+ 

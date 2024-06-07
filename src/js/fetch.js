@@ -53,6 +53,28 @@ const deleteTask = async (id) => {
     window.location.reload()
 }
 
+//DELETE API
+const putTask = async (id) => {
+
+    console.log(id)
+    try {
+        const response = await fetch(`http://localhost:3000/api/task/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        
+        });
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+      
+        console.log(error)
+    }
+    window.location.reload()
+}
+
+
 
 // EXPORTS
 export { getTask, postTask, deleteTask }
