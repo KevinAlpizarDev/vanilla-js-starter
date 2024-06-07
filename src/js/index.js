@@ -1,9 +1,5 @@
 // IMPORTS
-import { postTask } from "./fetch";
-import { getTask } from "./fetch";
-import { deleteTask } from "./fetch";
-import { putTask } from "./fetch";
-
+import { postTask, getTask, deleteTask, putTask } from "./fetch";
 // import { myobject } from "./module";
 
 //Seleccionamos los elementos html
@@ -12,17 +8,18 @@ const addBtn = document.querySelector(".btn-add");//Boton para añadir tarea
 const ul = document.querySelector("ul");//lista donde se agregaran los elementos
 const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
 
-
 //GET FUNCTION
 async function cargarTareas() {
     let tareasPrometidas = await getTask()
 
-    if (tareasPrometidas.length <= 0) {//validamos si hay algún li
-        empty.style.display = "block";//Regresa el parrafo
-    }
-    else if (tareasPrometidas.length >= 0) {
-        empty.style.display = "none";//Regresa el parrafo
-    }
+    // if (tareasPrometidas.length <= 0) {//validamos si hay algún li
+    //     empty.style.display = "block";//Regresa el parrafo
+    // }
+    // else if (tareasPrometidas.length >= 0) {
+    //     empty.style.display = "none";//Regresa el parrafo
+    // }
+
+    empty.style.display = tareasPrometidas.length <= 0 ? "block" : "none";
 
     for (let i = 0; i < tareasPrometidas.length; i++) {
         const li = document.createElement("li")
@@ -34,35 +31,43 @@ async function cargarTareas() {
         colorFun()
         // console.log(colorFun());
         validaClick(li)
-       
+
         // li.appendChild(p)
 
         let inputs = document.createElement("input")
-       
+
         inputs.id = "inputs";
         inputs.setAttribute("readonly", "readonly");
-        
-        // inputs.addEventListener("dblclick", function () {
-        //     inputs.removeAttribute("readonly");
-        // })
+
+
+        inputs.addEventListener("dblclick", function () {
+            inputs.removeAttribute("readonly");
+        })
 
         // editButton.addEventListener("click", function () {
-           
+
         // })
-       
+
         inputs.value = p.textContent
         ul.appendChild(li);
         li.appendChild(inputs)
-      
-        li.appendChild( editButton())
+
+
+        li.appendChild(editButton())
 
 
         li.appendChild(addDeleteBtn());
 
-        
+
 
         // ul.appendChild(input)
     }
+
+    editButton.addEventListener("click", function () {
+        inputs.id.removeAttribute('readonly', 'readonly');
+
+    })
+
     llamarBorrado()
 }
 
@@ -76,7 +81,7 @@ async function llamarBorrado() {
     let tareasPrometidas = await getTask()
 
     for (let i = 0; i < tareasPrometidas.length; i++) {
-     
+
         const li = document.createElement("li")
         const p = document.createElement("p");
         li.id = tareasPrometidas[i].id
@@ -108,7 +113,7 @@ addBtn.addEventListener("click", function () {
     //VALIDACION TAREAS VACÍAS
     if (input.value.trim() != "") {
         postTask(input.value)
-    }else {
+    } else {
         alert("tareas vacías no es valido")
     }
 })
@@ -152,24 +157,6 @@ const counterFunction = () => {
     counter.innerHTML = pendingTaskCounter
 
 }
-
-
-// function calcular(operacion, numero1, numero2) { //Parametro
-
-// //     switch (operacion) {
-// //     case "sumar" :
-// //         return myobject.sumar(numero1, numero2)
-// //     case "restar":
-// //         return myobject.restar(numero1, numero2)
-// //     case "dividir" :
-// //             return myobject.dividir(numero1, numero2)
-// //     case "multiplicar":
-// //          return myobject.multiplicar(numero1, numero2)
-// //          default:
-// //             console.log("No es nunguna operacion")
-// //             break
-// //   }
-// }
 
 // console.log(calcular("sumar", 1, 2));
 let fontColor = document.getElementById("fontColor")
