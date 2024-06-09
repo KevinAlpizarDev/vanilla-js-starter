@@ -20,27 +20,27 @@ async function cargarTareas() {
 
     if (tareasPrometidas.length <= 0) {//validamos si hay algún li
         empty.style.display = "block";//Regresa el parrafo
-        completeModal.style.display = "block"
+        // completeModal.style.display = "block"
     }
     else if (tareasPrometidas.length >= 0) {
         empty.style.display = "none";//Regresa el parrafo
-        completeModal.style.display = "none"
+        // completeModal.style.display = "none"
         }
 
 
         let counterclick = 0
-completeButton.addEventListener("click",function () {
-    // completeModal.style.display = "none"
-    counterclick++
-    console.log(counterclick);
+// completeButton.addEventListener("click",function () {
+//     // completeModal.style.display = "none"
+//     counterclick++
+//     console.log(counterclick);
 
-    if ( counterclick >= 1 && tareasPrometidas.length <= 0 ) {
-            completeModal.style.display = "none"
-    } else {
-         completeModal.style.display = "none"
-    }
+//     if ( counterclick >= 1 && tareasPrometidas.length <= 0 ) {
+//             completeModal.style.display = "none"
+//     } else {
+//          completeModal.style.display = "none"
+//     }
 
-})
+// })
 
 
 
@@ -197,10 +197,10 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const d = new Date();
 let day = days[d.getDay()];
 
-today.innerHTML = `Tasks for: ${day}`
 console.log(day);
 
 
+today.innerHTML = `Tasks for: ${day}`
 pendingTaskCounter = 0
 const counterFunction = () => {
     pendingTaskCounter++
@@ -236,7 +236,7 @@ const openModal = function () {
 };
 
 
- openModal()
+//  openModal()
 
 btnsOpenModal.addEventListener("click", function () {
     closeModal()
@@ -363,3 +363,56 @@ const closeModal = function () {
 // })();
 
 // openModalOnce(); // Esto abrirá el modal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////
+
+// import { calculadora } from "./module.js";
+// // Inserte el código aquí
+// export {calcular};
+// function calcular(operacion,a,b ) {
+//   let instancia = new calculadora(a,b)
+//   switch(operacion) {
+//     case "sumar":
+//       return instancia.sumar(a, b);
+//     case "restar":
+//       return instancia.restar();
+//     case "multiplicar":
+//       return instancia.multiplicar();
+//     case "dividir":
+//       return instancia.dividir();
+//   }
+// }
+
+// console.log(calcular("sumar", 1,2));
+
+import { myobject } from "./module";
+// 2. Dentro del index.js importe la calculadora.
+//    * Defina una función que se llame calcular:
+//      * Recibe tres parametros (operacion, numero1, numero2)
+//        * Dada la operación ejecuta la función expuesta en calculadora.js
+function calcular(operacion, a, b) { //Parametro 
+
+    switch (operacion) {
+    case "sumar" :
+        return myobject.sumar(a, b) 
+
+  }
+}
+
+
+
+console.log(calcular("sumar", 1, 1));
