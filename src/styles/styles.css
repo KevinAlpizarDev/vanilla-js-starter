@@ -322,8 +322,8 @@ background-color: #E6E6FA;
             /*Lista de TAREAS */
 
             ul li {
-                min-width: 400px;
-                width: 550px;
+                min-width: 300px;
+                width: 500px;
                 display: flex;
             justify-content: space-around;
             align-items: center;
@@ -332,10 +332,24 @@ background-color: #E6E6FA;
             border-radius: 10px;
             margin: 10px 100px 10px 20px;
             /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
             padding: 5px 101px;
      /* padding: 5px 200px 5px 100px; */
             }
+
+
+            ul li:hover {
+      /* background-color: black; */
+      /* color: white; */
+      background-color: #ffffff; /* color de fondo */
+      border-radius: 12px; /* radio de borde */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* sombra */
+      border: 1px solid #dddddd; /* borde sólido */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px; /* ajusta el tamaño de la fuente según tu diseño */
+          }
 
 
 li p {
@@ -345,6 +359,13 @@ li p {
     word-wrap: break-word;
     margin: 14px;
 }
+
+
+
+/* li p:hover {
+color: white;
+} */
+
 
 
 #inputs{

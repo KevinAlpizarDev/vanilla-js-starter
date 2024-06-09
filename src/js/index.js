@@ -126,12 +126,15 @@ function addDeleteBtn() {
     const deleteBtn = document.createElement("input");
     deleteBtn.type = "checkbox";
     deleteBtn.id = "eliminar";
-    deleteBtn.className = "some-name";//AGREGARLE UNA CLASE
-    // deleteBtn.style.backgroundColor = "#f41155"
-    // deleteBtn.style.color = "red"
-    return deleteBtn;//Una vez se tenga el listener se hace un return
-    // para agregar la funcnion a agregar el li
+    deleteBtn.className = "some-name"; // AGREGARLE UNA CLASE
+
+    // Establecer estilos directamente
+    deleteBtn.style.backgroundColor = "#f41155";
+    deleteBtn.style.color = "red";
+
+    return deleteBtn;
 }
+
 
 // FUNCION IMPORTADA
 myFunctionsObject.currentDay()//MUESTRA EL DÍA ACTUAL 
@@ -163,4 +166,25 @@ const closeModal = function () { //ACCION AL CERRAR EL MODAL
   overlay.classList.add('hidden');
   console.log("cerrado");
 };
+
+
+
+//////////////////////
+
+function calcular(operacion, numero1, numero2) { //Parametro 
+
+    switch (operacion) {
+    case "sumar" :
+        return myFunctionsObject.sumar(numero1, numero2) 
+    }
+}
+
+
+console.log(calcular("sumar", 1,2));
+
+
+
+
+
+
 
