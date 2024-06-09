@@ -1,4 +1,5 @@
 
+//API FILE 
 
 //GET API
 async function getTask() {
@@ -53,7 +54,9 @@ const deleteTask = async (id) => {
     window.location.reload()
 }
 
-//DELETE API
+
+
+//PUT API
 const putTask = async (id) => {
 
     console.log(id)

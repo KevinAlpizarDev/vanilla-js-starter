@@ -1,94 +1,58 @@
 // IMPORTS
 import { postTask, getTask, deleteTask, putTask } from "./fetch";
-// import { myobject } from "./module";
+import { myFunctionsObject } from "./module";
 
-//Seleccionamos los elementos html
-const input = document.querySelector("input");
-const addBtn = document.querySelector(".btn-add");//Boton para añadir tarea
-const ul = document.querySelector("ul");//lista donde se agregaran los elementos
-const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
-////////////////////
-const completeModal = document.getElementById("complete-modal")
-////////////////////////////////////////////////////////////////////
 
-const completeButton = document.getElementById("complete-button")
+//SELECTION OF HTML ELEMENTS
+
+//ELEMENTOS DE LA APLICACION PRINCIPAL
+const input = document.querySelector("input");//INPUT DE INGRESO DE TAREAS
+const addBtn = document.querySelector(".btn-add");//BOTON PARA AÑADIR TAREA
+const ul = document.querySelector("ul");//LISTA DONDE SE AGREGAN LOS ELEMENTOS 
+const empty = document.querySelector(".empty");//PARRAFO CUANDO NO HAY TAREAS
+//ELEMENTOS DEL MODAL 
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+// const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelector('.show-modal');
+// const completeModal = document.getElementById("complete-modal")
+// ////////////////////////////////////////////////////////////////////
+
+// const completeButton = document.getElementById("complete-button")
 
 
 //GET FUNCTION
 async function cargarTareas() {
     let tareasPrometidas = await getTask()
 
-    if (tareasPrometidas.length <= 0) {//validamos si hay algún li
-        empty.style.display = "block";//Regresa el parrafo
-        // completeModal.style.display = "block"
+    if (tareasPrometidas.length <= 0) {//VALIDACION SI NO HAY TAREAS  validamos si hay algún li
+        empty.style.display = "block";//SE MUESTRA EL PARRAFO EN EL DISPLAY 
     }
-    else if (tareasPrometidas.length >= 0) {
-        empty.style.display = "none";//Regresa el parrafo
-        // completeModal.style.display = "none"
+    else if (tareasPrometidas.length >= 0) {//VALIDACION SI HAY TAREAS
+        empty.style.display = "none";//DESAPARECE EL PARRAFO
         }
 
 
-        let counterclick = 0
-// completeButton.addEventListener("click",function () {
-//     // completeModal.style.display = "none"
-//     counterclick++
-//     console.log(counterclick);
-
-//     if ( counterclick >= 1 && tareasPrometidas.length <= 0 ) {
-//             completeModal.style.display = "none"
-//     } else {
-//          completeModal.style.display = "none"
-//     }
-
-// })
-
-
-
-        
-        
     for (let i = 0; i < tareasPrometidas.length; i++) {
         const li = document.createElement("li")
         const p = document.createElement("p");
         p.textContent = tareasPrometidas[i].task;
         li.id = tareasPrometidas[i].id;
 
-        counterFunction();
-        // colorFun()
-        // console.log(colorFun());
+        // counterFunction();
+        //FUNCION IMPORTADA
+        myFunctionsObject.tasksCounter()//CUENTA LA CANTIDAD DE TAREAS 
+  
         validaClick(li)
    
   
-
-
      
          li.appendChild(p)
 
-        // let inputs = document.createElement("input")
-       
-        // inputs.id = "inputs";
-        // inputs.setAttribute("readonly", "readonly");
-        
-        // inputs.addEventListener("dblclick", function () {
-        //     inputs.removeAttribute("readonly");
-        // })
-
-        // editButton.addEventListener("click", function () {
-           
-        // })
-       
-        // inputs.value = p.textContent
         ul.appendChild(li);
-        // li.appendChild(inputs)
-      
-        // li.appendChild( editButton())
-
 
         li.appendChild(addDeleteBtn());
 
-     
-
-        
-        // ul.appendChild(input)
     }
     llamarBorrado()
 }
@@ -139,16 +103,7 @@ function validaClick(li) {
 
 }
 
-// function noValidaClick(li) {
-//     li.addEventListener("change", function () {
-//         //SETTIMEOUT PARA DELETE DEL API
-//         clearTimeout(() => {
-//             deleteTask(li.id)
-//             //TRES SEGUNDOS DE RETARDO
-//         }, 1000);
-//     })
-// }
-////////////////////
+
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         if (input.value != "") {
@@ -178,142 +133,30 @@ function addDeleteBtn() {
     // para agregar la funcnion a agregar el li
 }
 
-
-
-// function editButton() {
-//     let editButton = document.createElement("button")
-//     editButton.innerHTML = "Edit"
-//     return editButton
-// }
-
-
-
-
-
-let today = document.getElementById("today")
-
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-const d = new Date();
-let day = days[d.getDay()];
-
-console.log(day);
-
-
-today.innerHTML = `Tasks for: ${day}`
-pendingTaskCounter = 0
-const counterFunction = () => {
-    pendingTaskCounter++
-    let counter = document.getElementById("counter")
-    counter.innerHTML = pendingTaskCounter
-
-}
-
-// console.log(calcular("sumar", 1, 2));
-// let fontColor = document.getElementById("fontColor")
-
-// ////////////////////////////////////////
-// colorCounter = 0
-// actualColor = ["#ff0000", "#FFFACD", "#F5FFFA", "#87CEEB"]
-// const colorFun = () => {
-
-//     colorCounter <= 3 ? console.log(actualColor[colorCounter++]) : console.log(actualColor[colorCounter = 0])
-//     fontColor.style.color = `${actualColor}`;
-// }
+// FUNCION IMPORTADA
+myFunctionsObject.currentDay()//MUESTRA EL DÍA ACTUAL 
 
 //NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
-const btnsOpenModal = document.querySelector('.show-modal');
-
-const openModal = function () {
-  modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-
-};
-
-
-//  openModal()
-
+// EVENTO DE ESCUCHA PARA CERRAR EL MODAL
 btnsOpenModal.addEventListener("click", function () {
     closeModal()
-})
-//   btnsOpenModal[i].addEventListener('click', closeModal());
-
-// if (openModal()) {
-//     openModal()
-// }else{
-//     openModal()
-// }
+    })
+    
+    // MODAL LOGIC
+    const openModal = function () {//ACCION AL ABRIR EL MODAL 
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+    
+    };
 // openModal()
 
-// openModal()
-let count = 0
-// btnsOpenModal.addEventListener("click", function () {
-//     // count++
-//     console.log(  count++);
- 
- 
-//  })
-
-// count = 0
-//  if (count === 0) {
-//    openModal()
-
-//    console.log(  count++);
-//    btnsOpenModal.addEventListener("click", function () {
-//     // count++
-//     console.log(  count++);
- 
-//  closeModal()
-
-// if (count >= 1 && closeModal()) {
-//     closeModal()
-//     count=0
-// }
-
-//  })
-   
-// }
-
-// if (!document.cookie.includes("modalOpened")) {
-//     // Si no se ha abierto, abrir la modal y establecer una cookie
-//     openModal();
-//     document.cookie = "modalOpened=true; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/";
-//   }
-  
-
-
-
-
-// if () {
-    
-//     btnsOpenModal.addEventListener("click", function () {
-    
-//         closeModal()
-     
-//      })
-
-   
-// }    
-
-
-
-
-// let somecounter = 0
-// btnsOpenModal.addEventListener("click", function () {
-
-//    closeModal()
-
-// })
-const closeModal = function () {
+//MODAL LOGIC
+const closeModal = function () { //ACCION AL CERRAR EL MODAL 
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
   console.log("abierto");
-
 
 
   modal.classList.add('hidden');
@@ -321,98 +164,3 @@ const closeModal = function () {
   console.log("cerrado");
 };
 
-// closeModal()
-// for (let i = 0; i < btnsOpenModal.length; i++)
-//   btnsOpenModal[i].addEventListener('click', closeModal);
-
-// // btnCloseModal.addEventListener('click', openModal);
-// overlay.addEventListener('click', closeModal);
-
-// document.addEventListener('keydown', function (e) {
-//   // console.log(e.key);
-
-//   if (e.key == "Enter" && e.key === 'Escape' && !modal.classList.contains('hidden')) {
-//     closeModal();
-//   }
-// })
-
-
-// excecutionCounter = 0
-
-// const excecution = () => {
-//     btnsOpenModal.addEventListener("click", function () {
-//        excecutionCounter++
-//        if (excecutionCounter >= 0) {
-        
-//        } else {
-        
-//        } 
-//     })
-// }
-// excecution()
-
-// const openModalOnce = (function() {
-//     var executed = false;
-
-//     return function() {
-//         if (!executed) {
-//             executed = true;
-//             openModal(); // Llamamos a la función openModal cuando se ejecute por primera vez
-//         }
-//     };
-// })();
-
-// openModalOnce(); // Esto abrirá el modal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////
-
-// import { calculadora } from "./module.js";
-// // Inserte el código aquí
-// export {calcular};
-// function calcular(operacion,a,b ) {
-//   let instancia = new calculadora(a,b)
-//   switch(operacion) {
-//     case "sumar":
-//       return instancia.sumar(a, b);
-//     case "restar":
-//       return instancia.restar();
-//     case "multiplicar":
-//       return instancia.multiplicar();
-//     case "dividir":
-//       return instancia.dividir();
-//   }
-// }
-
-// console.log(calcular("sumar", 1,2));
-
-import { myobject } from "./module";
-// 2. Dentro del index.js importe la calculadora.
-//    * Defina una función que se llame calcular:
-//      * Recibe tres parametros (operacion, numero1, numero2)
-//        * Dada la operación ejecuta la función expuesta en calculadora.js
-function calcular(operacion, a, b) { //Parametro 
-
-    switch (operacion) {
-    case "sumar" :
-        return myobject.sumar(a, b) 
-
-  }
-}
-
-
-
-console.log(calcular("sumar", 1, 1));

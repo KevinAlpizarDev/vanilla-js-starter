@@ -52,8 +52,8 @@ background-color: #87CEEB;
     
  
     color: rgb(61, 42, 180);
-    animation-name:  movenInLeft;
-    animation-duration: 4s;
+    /* animation-name:  movenInLeft;
+    animation-duration: 4s; */
 
     
 }
