@@ -11,6 +11,7 @@ const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
 const completeModal = document.getElementById("complete-modal")
 ////////////////////////////////////////////////////////////////////
 
+const completeButton = document.getElementById("complete-button")
 
 
 //GET FUNCTION
@@ -25,6 +26,25 @@ async function cargarTareas() {
         empty.style.display = "none";//Regresa el parrafo
         completeModal.style.display = "none"
         }
+
+
+        let counterclick = 0
+completeButton.addEventListener("click",function () {
+    // completeModal.style.display = "none"
+    counterclick++
+    console.log(counterclick);
+
+    if ( counterclick >= 1 && tareasPrometidas.length <= 0 ) {
+            completeModal.style.display = "none"
+    } else {
+         completeModal.style.display = "none"
+    }
+
+})
+
+
+
+        
         
     for (let i = 0; i < tareasPrometidas.length; i++) {
         const li = document.createElement("li")
