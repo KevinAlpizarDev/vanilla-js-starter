@@ -1,4 +1,13 @@
 
+
+
+
+
+
+
+
+
+
 //API FILE 
 
 //GET API
@@ -7,7 +16,7 @@ async function getTask() {
         const response = await fetch('http://localhost:3000/api/task');
         const data = await response.json();
 
-        return data;
+        return data
     } catch (error) {
         console.error(error);
     }
@@ -81,4 +90,3 @@ const putTask = async (id) => {
 
 // EXPORTS
 export { getTask, postTask, deleteTask, putTask }
-
