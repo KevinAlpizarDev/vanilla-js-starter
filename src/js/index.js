@@ -1,6 +1,8 @@
 
 // IMPORTS
-import { postTask, getTask, deleteTask, putTask } from "./fetch";
+// EXPORTS
+// export { getTask, postTask, deleteTask };
+import { getTask, deleteTask, postTask } from "./fetch";
 import { myFunctionsObject } from './module';
 
 // SELECTION OF HTML ELEMENTS
@@ -46,8 +48,9 @@ function ClickValidate(li) {
     });
 }
 
-document.addEventListener('keydown', function (e) {
-    e.key === 'Escape' || input.value != "" ? postTask(input.value) : console.log(3);
+document.addEventListener('', function (e) {
+    e.key === 'Enter' ? postTask(input.value) : console.log(3);
+
 });
 
 // ESCUCHA AL BOTON AGREGAR TAREAS
@@ -61,6 +64,8 @@ myFunctionsObject.currentDay(); // MUESTRA EL DÍA ACTUAL
 
 // EVENTO DE ESCUCHA PARA CERRAR EL MODAL
 btnsOpenModal.addEventListener("click", function () {
-  
+
     myFunctionsObject.closeModal();
 });
+
+//  myFunctionsObject.openModal()
