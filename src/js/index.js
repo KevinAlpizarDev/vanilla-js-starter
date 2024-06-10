@@ -1,6 +1,6 @@
 // IMPORTS
 import { postTask, getTask, deleteTask, putTask } from "./fetch";
-import { myFunctionsObject } from "./module";
+import { myFunctionsObject } from './module';
 
 
 //SELECTION OF HTML ELEMENTS
@@ -153,7 +153,7 @@ btnsOpenModal.addEventListener("click", function () {
       overlay.classList.remove('hidden');
     
     };
-//  openModal()
+//   openModal()
 
 //MODAL LOGIC
 const closeModal = function () { //ACCION AL CERRAR EL MODAL 
@@ -178,7 +178,7 @@ function calcular(operacion, numero1, numero2) { //Parametro
         return myFunctionsObject.sumar(numero1, numero2) 
     }
 }
-
+export { calcular}
 
 console.log(calcular("sumar", 1,2));
 

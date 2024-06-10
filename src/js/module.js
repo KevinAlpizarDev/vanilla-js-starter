@@ -37,3 +37,8 @@ sumar: function (a,b) {
 
 };
 
+
+
+
+
+exports.myFunctionsObject = myFunctionsObject

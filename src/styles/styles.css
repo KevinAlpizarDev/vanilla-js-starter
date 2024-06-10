@@ -91,6 +91,7 @@ background-color: var(--header-color);
     font-style: normal;
     font-size: 60px;
 
+
 }
 .e-span{
     /* color: rgb(62, 244, 55); */
@@ -348,6 +349,7 @@ background-color: #f5f5f5;
             /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
             /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
             padding: 5px 101px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
      /* padding: 5px 200px 5px 100px; */
             }
 
@@ -406,7 +408,7 @@ MODAL */
     font-size: 2rem;
     font-weight: 600;
     padding: 1.75rem 3.5rem;
-    margin: 440px 600px ;
+    margin: 460px 160px ;
     border: none;
     background-color: var(--white-color);
     color: #444;

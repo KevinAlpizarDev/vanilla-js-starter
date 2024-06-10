@@ -1,7 +1,7 @@
 {
-  "name": "vanilla-js",
+  "name": "vanilla",
   "version": "1.0.0",
-  "description": "",
+  "description": "Azul pastel: #9AD1D4\r Verde pastel: #A9D18E\r Rosa pastel: #E8A1B3\r Amarillo pastel: #FFDA90",
   "main": "index.js",
   "scripts": {
     "start": "node server & npx parcel serve src/index.html --open",
