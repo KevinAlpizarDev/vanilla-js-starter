@@ -1,7 +1,5 @@
-// IMPORTS
-import { postTask, getTask, deleteTask, putTask } from "./fetch";
+import { postTask, getTask, deleteTask } from "./fetch"; // Ensure getTask is imported here
 import { myFunctionsObject } from './module';
-
 // SELECTION OF HTML ELEMENTS
 // ELEMENTOS DE LA APLICACION PRINCIPAL
 const input = document.querySelector("input"); // INPUT DE INGRESO DE TAREAS
@@ -63,8 +61,3 @@ btnsOpenModal.addEventListener("click", function () {
   
     myFunctionsObject.closeModal();
 });
-
-
-
-
-

@@ -201,7 +201,7 @@ form {
   font-size: 20px;
   margin-left: 160px;
   text-transform: uppercase;
-  animation: loopText 10s infinite linear;
+  animation: loopText 15s infinite linear;
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
