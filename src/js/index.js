@@ -70,5 +70,3 @@ btnsOpenModal.addEventListener("click", function () {
     myFunctionsObject.closeModal();
 });
 
-
-// myFunctionsObject.openModal()
