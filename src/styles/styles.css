@@ -1,319 +1,509 @@
+
+
 * {
-  margin: 0px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 30px;
+    margin: 0px;
+    /* font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal; */
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+
 }
 
 :root {
   --header-color: #87CEEB;
-  --task-tittle-color: #535f64;
+  --task-tittle-color:  #535f64;
   --white-color: white;
 }
 
+
+
+
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 134px;
+ 
 }
 
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
+
+.header-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+width: 100%;
+height: 100%;
+/* background-color: aquamarine; */
+
+background-color: var(--header-color);
+
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 134px;
+.header-left h1{
+    
+
+  
+    
+    /* animation-name:  movenInLeft;
+    animation-duration: 4s; */
+
+    
 }
 
-.header-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--header-color);
+
+@keyframes movenInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    80% {
+      transform: translateX(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
 }
 
-.k-span {
-  color: #FFBD59;
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 60px;
+.k-span{
+    /* color: rgb(0, 255, 179); */
+    color:  #FFBD59   ;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+
+
+}
+.e-span{
+    /* color: rgb(62, 244, 55); */
+    color: #C1FF72;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
 }
 
-.e-span {
-  color: #C1FF72;
+.e-span-2{
+    /* color: rgb(228, 55, 244); */
+    color:#FF66C4 ;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.p-span{
+    /* color: rgb(54, 66, 229); */
+  color:   #8C52FF;  
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 50px;
 }
 
-.e-span-2 {
-  color: #FF66C4;
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 50px;
+
+
+
+.header-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    background-color: var(--header-color);
+    }
+
+    
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 50%;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; */
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+        }
+        
+
+        #input {
+            width: 70%;
+            /* height: 100%; */
+            border: none;
+            background-color: transparent;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 17px;
+        
+            
+        }
+        #input:focus {
+            outline: none;
+        }
+        
+        
+        .search-div{
+        width: 100%;
+        height: 20px;
+        background-color: aqua;
+        
+        }
+
+
+        .btn-add{
+height: 100%;
+width: 20%;
+        background-color: transparent;
+            border: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 25px;
+        }
+
+        .btn-add a{
+
+color: black;
+text-decoration: none;
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+        }
+
+        .btn-add a:hover{
+
+            color: black;
+            text-decoration: underline;
+            
+                    }
+            
+            
+
+    .header-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+background-color: var(--header-color);
+
+        
+        
+        }
+
+        .status{
+            background-color: rgb(255, 255, 255);
+            height: 90%;
+            width: 50% ;
+            border-radius: 5px;
+            /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            /* background-color: rgb(219, 255, 127); */
+     
+     
+     
+          }
+
+        .text-day{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          height: 30%;
+      /* background-color: blanchedalmond; */
+        }
+
+
+        .text-day h2{
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+          }
+  
+
+    
+    .number-day{
+display: flex;
+justify-content: center;
+align-items: center;
+        height: 70%;
+        font-weight: 100;
+        
+      
+    }
+
+    .number-day h2{
+      font-size: 70px;
+      color: rgb(43, 200, 161);
+      font-family: "Luckiest Guy", cursive;
+      font-weight: 100;
+      font-style: normal;
+      
+            }
+
+/* TITULO DE LAS TAREAS */
+.task-tittle{
+    height: 30px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--task-tittle-color);
+    background-color: #581ffb;
+    
+   
+    
+
+    /* background-color: #E8A1B3; */
+
+
 }
+.task-tittle h2{
 
-.p-span {
-  color: #8C52FF;
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 50px;
-}
+font-size: 20px;
+   margin-left: 160px;
+   text-transform: uppercase;
+   animation: loopText 10s infinite linear;
+   font-family: "Luckiest Guy", cursive;
+   font-weight: 400;
+   font-style: normal;
+   color: var(--white-color);
 
-.header-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--header-color);
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  height: 50%;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; */
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-}
-
-#input {
-  width: 70%;
-  /* height: 100%; */
-  border: none;
-  background-color: transparent;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 17px;
-}
-
-#input:focus {
-  outline: none;
-}
-
-.search-div {
-  width: 100%;
-  height: 20px;
-  background-color: aqua;
-}
-
-.btn-add {
-  height: 100%;
-  width: 20%;
-  background-color: transparent;
-  border: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 25px;
-}
-
-.btn-add a {
-  color: black;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.btn-add a:hover {
-  color: black;
-  text-decoration: underline;
-}
-
-
-.header-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--header-color);
-}
-
-.status {
-  background-color: rgb(255, 255, 255);
-  height: 90%;
-  width: 50%;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
-.text-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
-}
-
-.text-day h2 {
-  font-size: 17px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-}
-
-.number-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70%;
-  font-weight: 100;
-}
-
-.number-day h2 {
-  font-size: 70px;
-  color: rgb(43, 200, 161);
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.task-tittle {
-  height: 30px;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: var(--task-tittle-color);
-  background-color: #581ffb;
-}
-
-.task-tittle h2 {
-  font-size: 20px;
-  margin-left: 160px;
-  text-transform: uppercase;
-  animation: loopText 15s infinite linear;
-  font-family: "Luckiest Guy", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--white-color);
-  white-space: nowrap;
+  white-space: nowrap; /* Para evitar el salto de línea */
   animation: loopText 10s infinite linear;
+
 }
 
 @keyframes loopText {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
-      transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
-.scroll-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 456px;
-  background-color: aqua;
+
+.scroll-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+ 
+
+    width: 100%;
+    height: 456px;
+    background-color: aqua;
 }
 
-.scroll {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-  overflow-y: scroll;
-}
+.scroll{
+    display: flex;
+    justify-content: center;
+ align-items: start;
+    width: 100%;
+    height: 100%;
+   
+/* padding: 50px; */
 
-ul li {
-  min-width: 300px;
-  width: 500px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px 20px 10px 20px;
-  padding: 5px 101px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-}
+background-color: #f5f5f5;
 
-ul li:hover {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    overflow-y: scroll;
 }
+            /*Lista de TAREAS */
+
+            ul li {
+                min-width: 300px;
+                width: 500px;
+                display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* background-color: red; */
+            background-color: white;
+            border-radius: 10px;
+            margin: 10px 20px 10px 20px;
+            /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+            /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+            padding: 5px 101px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+     /* padding: 5px 200px 5px 100px; */
+            }
+
+
+            ul li:hover {
+     
+              box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          }
+
 
 li p {
-  min-width: 300px;
-  word-wrap: break-word;
-  margin: 14px;
+    /* background-color: blue; */
+    min-width: 300px;
+    
+    word-wrap: break-word;
+    margin: 14px;
 }
 
-#inputs {
-  max-width: 400px;
+
+
+/* li p:hover {
+color: white;
+} */
+
+
+
+#inputs{
+    /* background-color: red; */
+    max-width: 400px;
 }
+
+/* border: none; */
 
 #eliminar {
-  background-color: red;
+    background-color: red;
+
+
+
 }
 
-.empty {
+
+.empty{
   margin-top: 360px;
   color: rgb(10, 6, 6);
-  font-size: 700px;
+font-size: 700px;
 }
+
+
+
+
+/* 
+MODAL */
 
 .show-modal {
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.75rem 3.5rem;
-  margin: 460px 160px;
-  border: none;
-  background-color: var(--white-color);
-  color: #444;
-  border-radius: 10rem;
-  cursor: pointer;
-  position: absolute;
-  z-index: 13;
-}
 
-.close-modal {
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
-  color: #333;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.75rem 3.5rem;
+    margin: 460px 160px ;
+    border: none;
+    background-color: var(--white-color);
+    color: #444;
+    border-radius: 10rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 13;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  p {
+    font-size: 1.8rem;
+  }
+  
+  /* -------------------------- */
+  /* CLASSES TO MAKE MODAL WORK */
+  .hidden {
+    display: none;
+  }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
 
-p {
-  font-size: 1.8rem;
-}
+  .hidd{
+    display: none;
+  }
+  
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  
+    background-color: white;
+    padding: 6rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  .overlay {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 
-.hidden {
-  display: none;
-}
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(142, 58, 58);
+    /* backdrop-filter: blur(3px); */
+    background-image: url("/src/imgs/keep\ 4.svg");
 
-.hidd {
-  display: none;
-}
+ 
+  }
 
+
+
+  /* #complete-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    
+    height: 100px;
+    width: 400px;
+    background-color:#FFD1DC;
+  }
+
+ */
+
+
+
+  #complete-button{
+
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+  }
+
+  
