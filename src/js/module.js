@@ -21,11 +21,7 @@ export const myFunctionsObject = {
     today.innerHTML = `Tasks for: ${weekday}`
   },
 
-  // SUMA
-  sumar: function (a, b) {
-    return a + b
-  },
-
+ 
   /////////////// MODAL FUNCTIONS
 
   ///////////////OPEN MODAL FUNCTIONS 

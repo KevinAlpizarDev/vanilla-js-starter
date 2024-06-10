@@ -77,7 +77,7 @@ input.value.trim() != "" ?    postTask(input.value) :   alert("tareas vacías no
 
 // FUNCION IMPORTADA
 myFunctionsObject.currentDay()//MUESTRA EL DÍA ACTUAL 
-myFunctionsObject.openModal()
+
 
     // MODAL LOGIC
     // const openModal = function () {//ACCION AL ABRIR EL MODAL 
@@ -100,14 +100,16 @@ btnsOpenModal.addEventListener("click", function () {
     
 //////////////////////
 
-function calcular(operacion, numero1, numero2) { //Parametro 
-    switch (operacion) {
-    case "sumar" :
-        return myFunctionsObject.sumar(numero1, numero2) 
-    }
-}
-export { calcular}
+// function calcular(operacion, numero1, numero2) { //Parametro 
+//     switch (operacion) {
+//     case "sumar" :
+//         return myFunctionsObject.sumar(numero1, numero2) 
+//     }
+// }
+// export { calcular}
 
-console.log(calcular("sumar", 1,2));
+// console.log(calcular("sumar", 1,2));
+
+myFunctionsObject.openModal()
 
 
