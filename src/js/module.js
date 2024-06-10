@@ -31,7 +31,61 @@ export const myFunctionsObject = {
 
 sumar: function (a,b) {
   return a + b
+},
+
+/////////////// MODAL FUNCTIONS
+
+///////////////OPEN MODAL FUNCTIONS 
+openModal: function  () {
+  const overlay = document.querySelector('.overlay')
+  overlay.classList.remove("hidden")
+},
+
+
+///////////////CLOSE MODAL FUNCTIONS 
+
+closeModal: function () { //ACCION AL CERRAR EL MODAL 
+  const overlay = document.querySelector('.overlay')
+  overlay.classList.add('hidden');
+}, 
+
+
+////////////////CREATE CHECKBOX DIMAMICLY 
+addDeleteBtn: function () {
+
+    const deleteBtn = document.createElement("input");
+    deleteBtn.type = "checkbox";
+    deleteBtn.id = "eliminar";
+    deleteBtn.className = "some-name"; // AGREGARLE UNA CLASE
+    return deleteBtn;//RETORNA EL CHECKBOX
+
 }
+
+// ,
+// //CLICK VALIDATE A CHECKBOX CHANGE
+// ClickValidate: function (li) {
+//       // SETTIMEOUT PARA DELETE DEL API
+//         setTimeout(() => {
+//             deleteTask(li.id)
+//             //TRES SEGUNDOS DE RETARDO
+//         }, 1000);
+// }
+
+
+// function ClickValidate(li) {
+//     li.addEventListener("change", function () {
+//         //SETTIMEOUT PARA DELETE DEL API
+//         setTimeout(() => {
+//             deleteTask(li.id)
+//             //TRES SEGUNDOS DE RETARDO
+//         }, 1000);
+//     })
+// }
+
+
+// const openModal = function () {//ACCION AL ABRIR EL MODAL 
+//   overlay.classList.remove('hidden');//
+// };
 
 
 
