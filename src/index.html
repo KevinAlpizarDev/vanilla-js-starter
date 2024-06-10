@@ -2,6 +2,16 @@
 <html>
 
 <head>
+	<!-- KEEP FONT -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<!-- POPPINS FONT -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 	<!-- GOOGLE FONT -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,7 +19,7 @@
 		href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
 		rel="stylesheet">
 	<!-- TITTLE -->
-	<title>Ejemplo básico.</title>
+	<title>Ejemplo básico</title>
 	<meta charset="UTF-8" />
 	<!-- ESTILO CSS -->
 	<link rel="stylesheet" href="styles/styles.css">
@@ -23,55 +33,112 @@
 <body>
 	<!-- HEADER -->
 	<header>
-		<div class="search">
+		<!-- div izquierdo -->
+		<div class="header-left">
+			<h1><span class="k-span">K</span><span class="e-span">E</span><span class="e-span-2">E</span><span class="p-span">P</span></h1>
+		</div>
+		<!-- div central -->
+		<div class="header-center">
+
+
 			<form>
-				<input type="text" placeholder="Agregar tarea...">
+				<input id="input" type="text" placeholder="What are you planning today?">
 				<button class="btn-add">
-					<img src="./imgs/seachBar.svg" alt="">
+					<!-- <img src="./imgs/seachBar.svg" alt=""> -->
+
+				<a href="">SEND</a>
+
 				</button>
 			</form>
-	</header>
-	<div class="container-color">
+
+		</div>
+		<!-- div derecho -->
+		<div class="header-right">
+			<div class="status">
 
 
-		<!-- CONTENEDOR HEADER -->
-		<div class="container">
 
-			<div class="container-segment">
-				<h2>nothing</h2>
-			</div>
-			<div class="container-segment">
-				<h2>lista de Tareas</h2>
-			</div>
-			<div class="container-segment izquierdo">
-				<div class="container-segment-day">
-					<div>
-						<h4 id="today">day.</h4>
-						<h2 id="counter"></h2>
-					</div>
 
+
+				
+				<div class="text-day">
+
+					<h2 id="today"></h2>
 				</div>
-			</div>
+				<div class="number-day">
 
-		</div>
-		<div class="li-container">
-			<ul>
-
-			</ul>
-		</div>
-		<div class="empty">
-
-			<div id="header">
+					<h2 id="counter">0</h2>
+				</div>
 
 			</div>
-			<p>No tienes tareas pendientes</p>
-			<h3>CHECKBOX</h3>
-
-			<form id="myform">
-				syn<input type="checkbox" name="checkfield" id="g01-01"  />
-			</form>
-
 		</div>
+	</header>
+
+	<div class="task-tittle">
+		<h2>Organize your week</h2>
+		<h2>Track your progress</h2>
+		<h2>Check your progress</h2>
+		<h2>Organize your week</h2>
+		<h2>Track your progress</h2>
+	</div>
+
+	<!-- NNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+
+	<!-- <button class="show-modal">Show modal 1</button> -->
+    <!-- <button class="show-modal">Show modal 2</button>
+    <button class="show-modal">Show modal 3</button> -->
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <!-- <h1>I'm a modal window 😍l</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p> -->
+    </div>
+    <div class="overlay hidden">
+
+		<button class="show-modal">O</button>
+	</div>
+
+	<!-- DIV SCROLL -->
+	<div class="scroll-container">
+		<div class="scroll">
+
+<!-- <div class="complete-modal">
+<h2>MODAL</h2>
+</div> -->
+
+			<div class="li-container">
+				<ul id="fontColor">
+
+				</ul>
+			</div>
+
+			<div class="empty">
+
+
+				<p>No tienes tareas pendientes</p>
+
+
+			</div>
+
+
+
+
+			<!-- MODAL-2 -->
+			<!-- <div id="complete-modal">
+				<h2>MODAL</h2>
+				<button id="complete-button">d</button>
+				</div> -->
+
+	</div>
+
 	</div>
 	</div>
 	<!-- SCRIPT JS -->

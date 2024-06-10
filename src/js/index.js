@@ -1,27 +1,37 @@
 // IMPORTS
-import { postTask } from "./fetch";
-import { getTask } from "./fetch";
-import { deleteTask } from "./fetch";
+import { postTask, getTask, deleteTask, putTask } from "./fetch";
+import { myFunctionsObject } from "./module";
 
-//Seleccionamos los elementos html
-const input = document.querySelector("input");
-const addBtn = document.querySelector(".btn-add");//Boton para añadir tarea
-const ul = document.querySelector("ul");//lista donde se agregaran los elementos
-const empty = document.querySelector(".empty");//parrafo cuando no hay tareas
+
+//SELECTION OF HTML ELEMENTS
+
+//ELEMENTOS DE LA APLICACION PRINCIPAL
+const input = document.querySelector("input");//INPUT DE INGRESO DE TAREAS
+const addBtn = document.querySelector(".btn-add");//BOTON PARA AÑADIR TAREA
+const ul = document.querySelector("ul");//LISTA DONDE SE AGREGAN LOS ELEMENTOS 
+const empty = document.querySelector(".empty");//PARRAFO CUANDO NO HAY TAREAS
+//ELEMENTOS DEL MODAL 
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+// const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelector('.show-modal');
+// const completeModal = document.getElementById("complete-modal")
+// ////////////////////////////////////////////////////////////////////
+
+// const completeButton = document.getElementById("complete-button")
 
 
 //GET FUNCTION
 async function cargarTareas() {
     let tareasPrometidas = await getTask()
 
-    // console.log( typeof tareasPrometidas.length)
+    if (tareasPrometidas.length <= 0) {//VALIDACION SI NO HAY TAREAS  validamos si hay algún li
+        empty.style.display = "block";//SE MUESTRA EL PARRAFO EN EL DISPLAY 
+    }
+    else if (tareasPrometidas.length >= 0) {//VALIDACION SI HAY TAREAS
+        empty.style.display = "none";//DESAPARECE EL PARRAFO
+        }
 
-    if (tareasPrometidas.length <= 0) {//validamos si hay algún li
-        empty.style.display = "block";//Regresa el parrafo
-    }
-    else if (tareasPrometidas.length >= 0) {
-        empty.style.display = "none";//Regresa el parrafo
-    }
 
     for (let i = 0; i < tareasPrometidas.length; i++) {
         const li = document.createElement("li")
@@ -29,16 +39,32 @@ async function cargarTareas() {
         p.textContent = tareasPrometidas[i].task;
         li.id = tareasPrometidas[i].id;
 
-        counterFunction();
+        // counterFunction();
+        //FUNCION IMPORTADA
+        myFunctionsObject.tasksCounter()//CUENTA LA CANTIDAD DE TAREAS 
+  
         validaClick(li)
-        li.appendChild(p)
+   
+  
+     
+         li.appendChild(p)
+
+        ul.appendChild(li);
 
         li.appendChild(addDeleteBtn());
 
-        ul.appendChild(li);
     }
     llamarBorrado()
 }
+
+
+
+
+
+
+
+
+
 
 
 cargarTareas()
@@ -49,26 +75,16 @@ async function llamarBorrado() {
 
     let tareasPrometidas = await getTask()
 
-
-
-
-
-
     for (let i = 0; i < tareasPrometidas.length; i++) {
-        // console.log(i);
+
         const li = document.createElement("li")
         const p = document.createElement("p");
         li.id = tareasPrometidas[i].id
 
 
     }
-    // console.log("WADADAWDA")
+
 }
-
-
-
-
-
 
 function validaClick(li) {
     li.addEventListener("change", function () {
@@ -79,74 +95,94 @@ function validaClick(li) {
 
         setTimeout(() => {
             deleteTask(li.id)
-
-
             //TRES SEGUNDOS DE RETARDO
         }, 1000);
     })
+
+
+
 }
 
 
-////////////////////
-
 document.addEventListener('keydown', function (e) {
-    // console.log(e.key);
-
     if (e.key === 'Escape') {
         if (input.value != "") {
             postTask(input.value)
-
         }
     }
-
 })
 //ESCUCHA AL BOTON AGREGAR TAREAS
 addBtn.addEventListener("click", function () {
     //VALIDACION TAREAS VACÍAS
-    if (input.value != "") {
+    if (input.value.trim() != "") {
         postTask(input.value)
-
+    } else {
+        alert("tareas vacías no es valido")
     }
 })
 
 //DELETE FUNCTION
 function addDeleteBtn() {
     const deleteBtn = document.createElement("input");
-
     deleteBtn.type = "checkbox";
     deleteBtn.id = "eliminar";
-    deleteBtn.className = "some-name";//AGREGARLE UNA CLASE
+    deleteBtn.className = "some-name"; // AGREGARLE UNA CLASE
 
+    // Establecer estilos directamente
+    deleteBtn.style.backgroundColor = "#f41155";
+    deleteBtn.style.color = "red";
 
-
-
-    return deleteBtn;//Una vez se tenga el listener se hace un return
-    // para agregar la funcnion a agregar el li
+    return deleteBtn;
 }
 
 
+// FUNCION IMPORTADA
+myFunctionsObject.currentDay()//MUESTRA EL DÍA ACTUAL 
+
+//NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+
+
+// EVENTO DE ESCUCHA PARA CERRAR EL MODAL
+btnsOpenModal.addEventListener("click", function () {
+    closeModal()
+    })
+    
+    // MODAL LOGIC
+    const openModal = function () {//ACCION AL ABRIR EL MODAL 
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+    
+    };
+//  openModal()
+
+//MODAL LOGIC
+const closeModal = function () { //ACCION AL CERRAR EL MODAL 
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  console.log("abierto");
+
+
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+  console.log("cerrado");
+};
 
 
 
+//////////////////////
 
-let today = document.getElementById("today")
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+function calcular(operacion, numero1, numero2) { //Parametro 
 
-const d = new Date();
-let day = days[d.getDay()];
-
-
-today.innerHTML = day
-console.log(day);
-
-
-pendingTaskCounter = 0
-const counterFunction = () => {
-    pendingTaskCounter++
-    let counter = document.getElementById("counter")
-    counter.innerHTML = pendingTaskCounter
-
+    switch (operacion) {
+    case "sumar" :
+        return myFunctionsObject.sumar(numero1, numero2) 
+    }
 }
+
+
+console.log(calcular("sumar", 1,2));
+
+
 
 
 

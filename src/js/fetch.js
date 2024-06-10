@@ -1,4 +1,5 @@
 
+//API FILE 
 
 //GET API
 async function getTask() {
@@ -54,6 +55,30 @@ const deleteTask = async (id) => {
 }
 
 
+
+//PUT API
+const putTask = async (id) => {
+
+    console.log(id)
+    try {
+        const response = await fetch(`http://localhost:3000/api/task/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        
+        });
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+      
+        console.log(error)
+    }
+    window.location.reload()
+}
+
+
+
 // EXPORTS
-export { getTask, postTask, deleteTask }
+export { getTask, postTask, deleteTask, putTask }
 
