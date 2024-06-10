@@ -9,8 +9,17 @@
     font-weight: 600;
     font-style: normal;
     font-size: 30px;
-    
+
 }
+
+:root {
+  --header-color: #87CEEB;
+  --task-tittle-color:  #535f64;
+  --white-color: white;
+}
+
+
+
 
 
 * {
@@ -43,15 +52,16 @@ header{
 width: 100%;
 height: 100%;
 /* background-color: aquamarine; */
-background-color: #87CEEB;
 
+background-color: var(--header-color);
 
 }
 
 .header-left h1{
     
- 
-    color: rgb(61, 42, 180);
+
+  
+    
     /* animation-name:  movenInLeft;
     animation-duration: 4s; */
 
@@ -119,7 +129,7 @@ background-color: #87CEEB;
     width: 100%;
     height: 100%;
     
-    background-color: #87CEEB;
+    background-color: var(--header-color);
     }
 
     
@@ -196,8 +206,7 @@ font-style: normal;
         align-items: center;
         width: 100%;
         height: 100%;
-/* background-color: rgb(228, 174, 174); */
-background-color: #87CEEB;
+background-color: var(--header-color);
 
         
         
@@ -255,47 +264,47 @@ align-items: center;
 
 /* TITULO DE LAS TAREAS */
 .task-tittle{
-    height: 40px;
+    height: 30px;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
     overflow: hidden;
-    background-color: #2e1d60;
+    background-color: var(--task-tittle-color);
+    background-color: #581ffb;
     
+   
     
 
-   
+    /* background-color: #E8A1B3; */
 
 
 }
 .task-tittle h2{
-   color: white;
+
 font-size: 20px;
-   margin-left: 190px;
+   margin-left: 160px;
    text-transform: uppercase;
    animation: loopText 10s infinite linear;
    font-family: "Luckiest Guy", cursive;
    font-weight: 400;
    font-style: normal;
+   color: var(--white-color);
 
-  
+  white-space: nowrap; /* Para evitar el salto de línea */
+  animation: loopText 10s infinite linear;
 
 }
-
 
 @keyframes loopText {
-form{
-    transform: translatex(0%)
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
-to{
-
-    transform: translatex(-100%)
-}
-
-}
-
 
 
 .scroll-container{
@@ -320,7 +329,7 @@ to{
    
 /* padding: 50px; */
 
-background-color: #E6E6FA;
+background-color: #f5f5f5;
 
     overflow-y: scroll;
 }
@@ -397,9 +406,9 @@ MODAL */
     font-size: 2rem;
     font-weight: 600;
     padding: 1.75rem 3.5rem;
-    margin: 25rem 60rem;
+    margin: 440px 600px ;
     border: none;
-    background-color: #eb4444;
+    background-color: var(--white-color);
     color: #444;
     border-radius: 10rem;
     cursor: pointer;
@@ -465,6 +474,8 @@ MODAL */
     height: 100%;
     background-color: rgb(142, 58, 58);
     /* backdrop-filter: blur(3px); */
+    background-image: url("/src/imgs/keep\ 4.svg");
+
  
   }
 

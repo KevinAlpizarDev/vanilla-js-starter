@@ -153,7 +153,7 @@ btnsOpenModal.addEventListener("click", function () {
       overlay.classList.remove('hidden');
     
     };
-// openModal()
+//  openModal()
 
 //MODAL LOGIC
 const closeModal = function () { //ACCION AL CERRAR EL MODAL 
