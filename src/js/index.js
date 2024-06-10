@@ -1,9 +1,4 @@
 
-
-
-
-
-
 // IMPORTS
 import { postTask, getTask, deleteTask, putTask } from "./fetch";
 import { myFunctionsObject } from './module';
@@ -69,4 +64,3 @@ btnsOpenModal.addEventListener("click", function () {
   
     myFunctionsObject.closeModal();
 });
-
